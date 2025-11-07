@@ -74,7 +74,7 @@ const UserDashboard = () => {
       >
         <div>
           <h1 className="text-2xl sm:text-3xl font-semibold tracking-tight bg-gradient-to-r from-emerald-400 via-emerald-300 to-white bg-clip-text text-transparent">
-            Hello {user?.name || "User"} 👋
+            Hello {user?.name || "User"}
           </h1>
           <p className="text-sm text-zinc-400">
             Welcome to your personal task board
