@@ -37,21 +37,23 @@ const UserList = () => {
 
   return (
     <motion.div
-      className="mt-6 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md p-6 text-zinc-100 shadow-[0_0_0_1px_rgba(255,255,255,0.06)]"
+      className="mt-6 rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.06] to-white/[0.03] backdrop-blur-md p-6 sm:p-8 text-zinc-100 shadow-[0_0_0_1px_rgba(255,255,255,0.05),0_20px_40px_rgba(0,0,0,0.5)] hover:bg-white/[0.08] transition-all duration-300"
       variants={container}
       initial="hidden"
       animate="show"
     >
-      <h2 className="text-xl font-semibold tracking-tight mb-4">
+      <h2 className="text-2xl font-semibold tracking-tight mb-6 bg-gradient-to-r from-white to-zinc-400 bg-clip-text text-transparent">
         Registered Users
       </h2>
 
       {users.length === 0 ? (
-        <p className="text-zinc-400">No users created yet.</p>
+        <p className="text-zinc-400 text-base sm:text-lg italic">
+          No users created yet.
+        </p>
       ) : (
-        <div className="overflow-x-auto rounded-xl border border-white/10">
-          <table className="w-full table-auto text-left">
-            <thead className="bg-white/5 text-zinc-400">
+        <div className="overflow-x-auto rounded-2xl border border-white/10 bg-white/[0.02] backdrop-blur-md">
+          <table className="w-full table-auto text-left text-sm sm:text-base">
+            <thead className="bg-white/[0.06] text-zinc-400 uppercase text-xs sm:text-sm tracking-wide">
               <tr>
                 <th className="py-3 px-4 border-b border-white/10 font-medium">
                   #
@@ -70,6 +72,7 @@ const UserList = () => {
                 </th>
               </tr>
             </thead>
+
             <motion.tbody
               variants={stagger}
               initial="hidden"
@@ -80,13 +83,33 @@ const UserList = () => {
                 <motion.tr
                   key={user.id}
                   variants={row}
-                  className="transition-all duration-300 hover:bg-white/5"
+                  whileHover={{
+                    scale: 1.01,
+                    backgroundColor: "rgba(255,255,255,0.06)",
+                  }}
+                  className="transition-all duration-300"
                 >
-                  <td className="py-3 px-4">{i + 1}</td>
-                  <td className="py-3 px-4">{user.name}</td>
-                  <td className="py-3 px-4">{user.email}</td>
-                  <td className="py-3 px-4 capitalize">{user.role}</td>
-                  <td className="py-3 px-4">{user.tasks?.length || 0}</td>
+                  <td className="py-3 px-4 text-zinc-400">{i + 1}</td>
+                  <td className="py-3 px-4 font-medium text-zinc-100">
+                    {user.name}
+                  </td>
+                  <td className="py-3 px-4 text-zinc-300 truncate max-w-[240px]">
+                    {user.email}
+                  </td>
+                  <td className="py-3 px-4 capitalize">
+                    <span
+                      className={`px-3 py-1 rounded-full text-xs font-medium border ${
+                        user.role === "admin"
+                          ? "border-emerald-400/30 bg-emerald-400/20 text-emerald-300"
+                          : "border-white/10 bg-white/5 text-zinc-300"
+                      }`}
+                    >
+                      {user.role}
+                    </span>
+                  </td>
+                  <td className="py-3 px-4 text-emerald-300 font-semibold">
+                    {user.tasks?.length || 0}
+                  </td>
                 </motion.tr>
               ))}
             </motion.tbody>

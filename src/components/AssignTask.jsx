@@ -68,13 +68,13 @@ const AssignTask = ({ onTaskAssigned }) => {
 
   return (
     <motion.div
-      className="mt-6 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md p-6 text-zinc-100 shadow-[0_0_0_1px_rgba(255,255,255,0.06)]"
+      className="mt-6 rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.06] to-white/[0.03] backdrop-blur-lg p-6 sm:p-8 text-zinc-100 shadow-[0_0_0_1px_rgba(255,255,255,0.05),0_20px_40px_rgba(0,0,0,0.5)] transition-all duration-300 hover:bg-white/[0.08]"
       variants={container}
       initial="hidden"
       animate="show"
     >
       <motion.h2
-        className="text-xl font-semibold tracking-tight mb-4"
+        className="text-2xl sm:text-3xl font-semibold tracking-tight mb-6 bg-gradient-to-r from-white to-zinc-400 bg-clip-text text-transparent"
         variants={item}
       >
         Assign Task
@@ -82,7 +82,7 @@ const AssignTask = ({ onTaskAssigned }) => {
 
       <motion.form
         onSubmit={handleAssign}
-        className="space-y-4"
+        className="space-y-5"
         variants={stagger}
         initial="hidden"
         animate="show"
@@ -90,10 +90,10 @@ const AssignTask = ({ onTaskAssigned }) => {
         <motion.select
           value={selectedUserId}
           onChange={(e) => setSelectedUserId(e.target.value)}
-          className="w-full px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-zinc-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20"
+          className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-zinc-100 text-sm sm:text-base placeholder:text-zinc-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400/40 transition-all duration-300"
           variants={item}
         >
-          <option value="" className="bg-[#0a0a0a]">
+          <option value="" className="bg-[#0a0a0a] text-zinc-400">
             Select user
           </option>
           {users.map((user) => (
@@ -108,7 +108,7 @@ const AssignTask = ({ onTaskAssigned }) => {
           placeholder="Task title"
           value={taskTitle}
           onChange={(e) => setTaskTitle(e.target.value)}
-          className="w-full px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-zinc-100 placeholder:text-zinc-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20"
+          className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-zinc-100 placeholder:text-zinc-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400/40 transition-all duration-300"
           variants={item}
         />
 
@@ -116,20 +116,20 @@ const AssignTask = ({ onTaskAssigned }) => {
           placeholder="Task description"
           value={taskDesc}
           onChange={(e) => setTaskDesc(e.target.value)}
-          className="w-full px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-zinc-100 placeholder:text-zinc-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 min-h-28"
+          className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-zinc-100 placeholder:text-zinc-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400/40 min-h-28 sm:min-h-32 transition-all duration-300"
           variants={item}
         />
 
         <motion.button
           type="submit"
-          className="w-full py-2 rounded-xl border border-white/10 bg-white/10 text-zinc-100 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20"
+          className="w-full py-3 rounded-xl border border-white/10 bg-emerald-500/20 text-zinc-100 text-sm sm:text-base font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400/40 hover:bg-emerald-500/30 hover:shadow-[0_4px_24px_rgba(16,185,129,0.3)]"
           whileHover={{
             y: -2,
-            scale: 1.02,
+            scale: 1.03,
             boxShadow:
               "0 0 0 1px rgba(255,255,255,0.08), 0 20px 40px rgba(0,0,0,0.6)",
           }}
-          whileTap={{ scale: 0.99 }}
+          whileTap={{ scale: 0.98 }}
           transition={{ type: "spring", stiffness: 260, damping: 22 }}
           variants={item}
         >

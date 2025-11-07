@@ -60,13 +60,13 @@ const CreateUser = ({ onUserCreated }) => {
 
   return (
     <motion.div
-      className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md p-6 text-zinc-100 shadow-[0_0_0_1px_rgba(255,255,255,0.06)]"
+      className="rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.07] to-white/[0.03] backdrop-blur-xl p-6 sm:p-8 text-zinc-100 shadow-[0_0_0_1px_rgba(255,255,255,0.05),0_20px_40px_rgba(0,0,0,0.5)] transition-all duration-300 hover:bg-white/[0.08]"
       variants={container}
       initial="hidden"
       animate="show"
     >
       <motion.h2
-        className="text-xl font-semibold tracking-tight mb-4"
+        className="text-2xl font-semibold tracking-tight mb-6 bg-gradient-to-r from-emerald-400 to-emerald-200 bg-clip-text text-transparent"
         variants={item}
       >
         Create New User
@@ -74,33 +74,33 @@ const CreateUser = ({ onUserCreated }) => {
 
       <motion.form
         onSubmit={handleSubmit}
-        className="space-y-4"
+        className="space-y-5"
         variants={stagger}
         initial="hidden"
         animate="show"
       >
         <motion.input
           type="text"
-          placeholder="Name"
+          placeholder="Full Name"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          className="w-full px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-zinc-100 placeholder:text-zinc-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20"
+          className="w-full px-4 py-3 rounded-xl bg-white/[0.06] border border-white/10 text-zinc-100 placeholder:text-zinc-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400/40 transition-all duration-300 hover:bg-white/[0.08]"
           variants={item}
         />
 
         <motion.input
           type="email"
-          placeholder="Email"
+          placeholder="Email Address"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="w-full px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-zinc-100 placeholder:text-zinc-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20"
+          className="w-full px-4 py-3 rounded-xl bg-white/[0.06] border border-white/10 text-zinc-100 placeholder:text-zinc-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400/40 transition-all duration-300 hover:bg-white/[0.08]"
           variants={item}
         />
 
         <motion.select
           value={role}
           onChange={(e) => setRole(e.target.value)}
-          className="w-full px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-zinc-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20"
+          className="w-full px-4 py-3 rounded-xl bg-white/[0.06] border border-white/10 text-zinc-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400/40 transition-all duration-300 hover:bg-white/[0.08]"
           variants={item}
         >
           <option value="user" className="bg-[#0a0a0a]">
@@ -113,14 +113,12 @@ const CreateUser = ({ onUserCreated }) => {
 
         <motion.button
           type="submit"
-          className="w-full py-2 rounded-xl border border-white/10 bg-white/10 text-zinc-100 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20"
+          className="w-full py-3 rounded-xl border border-white/10 bg-emerald-500/20 text-emerald-100 font-medium text-base transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400/40 hover:bg-emerald-500/30 hover:shadow-[0_4px_24px_rgba(16,185,129,0.3)]"
           whileHover={{
             y: -2,
-            scale: 1.02,
-            boxShadow:
-              "0 0 0 1px rgba(255,255,255,0.08), 0 20px 40px rgba(0,0,0,0.6)",
+            scale: 1.03,
           }}
-          whileTap={{ scale: 0.99 }}
+          whileTap={{ scale: 0.98 }}
           transition={{ type: "spring", stiffness: 260, damping: 22 }}
           variants={item}
         >
