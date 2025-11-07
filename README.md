@@ -1,78 +1,70 @@
-# 🚀 Employee Management System (Frontend Only)
+# 🧠 Task Management System
 
-A sleek, dark-themed Employee Management System built using **React + Vite + Tailwind CSS**. It supports two roles:
-
-- **Admin**: Create users, assign tasks, and monitor task progress.
-- **User**: View and complete assigned tasks, which reflect back in the admin dashboard.
+A **modern, minimalist, and animated task management dashboard** built entirely with **React**, **Tailwind CSS**, and **Framer Motion**.  
+It’s a **frontend-only project** designed for **admins** to manage users and assign tasks — and for **users** to view and update their progress — with all data stored locally in `localStorage`.
 
 ---
 
-## 📦 Tech Stack
+## ✨ Features
 
-- ⚛️ React + Vite  
-- 🎨 Tailwind CSS  
-- 🧠 LocalStorage for state persistence (no backend used)
+### 👨‍💼 Admin Panel
+- Create and manage users (Admin/User roles)
+- Assign tasks to any registered user
+- View all assigned tasks in an elegant, animated table
+- Clear all tasks in one click
+- Stunning **glassmorphism UI** with blur and depth effects
 
----
+### 👩‍💻 User Dashboard
+- View all assigned tasks in a responsive, dynamic table
+- Mark tasks as **completed** instantly
+- Progress automatically synced with local storage
+- Minimal, dark, and fluid user interface
 
-## 📁 Folder Structure
-
-components/
-├── AdminDashboard.jsx
-├── UserDashboard.jsx
-├── CreateUser.jsx
-├── AssignTask.jsx
-├── AdminTaskOverview.jsx
-├── Sidebar.jsx
-├── Login.jsx
-├── LogoutButton.jsx
-App.jsx
-main.jsx
-
----
-
+### 💡 General Highlights
+- Built with **React (Hooks + Functional Components)**
+- Styled with **Tailwind CSS**
+- Smooth animations powered by **Framer Motion**
+- Fully **responsive** and **single-page** UI
+- Persistent data storage via **localStorage**
+- Elegant **bichromatic dark theme** (pitch black + soft white/grey)
 
 ---
 
-## 💡 Features
-
-- 🔐 Login system for Admin and Users
-- 🧑‍💼 Admin Dashboard with:
-  - Create New User
-  - Assign Tasks
-  - View Task Completion Overview
-  - Clear All Tasks
-- ✅ User Dashboard with:
-  - View Assigned Tasks
-  - Mark Tasks as Completed
-- 📦 State saved in `localStorage` for persistence
-- 🌓 Dark UI with emerald green accents
+## 🖼️ UI Preview (Theme)
+- Background: `#0a0a0a` (pitch dark)
+- Text: `zinc-100` and `zinc-400`
+- Accent surfaces: `bg-white/5`, `border-white/10`, `backdrop-blur-md`
+- Hover depth: subtle lift, glow, and blur animations
+- Components: rounded corners (`2xl`), smooth transitions, and spring physics motion
 
 ---
 
-## 🛠️ Setup & Run Locally
+## 🧩 Components Overview
 
-```bash
-# Clone the repo
-git clone https://github.com/your-username/employee-management-frontend.git
+| Component | Purpose |
+|------------|----------|
+| **Login.jsx** | Handles user login with role-based redirection |
+| **Sidebar.jsx** | Navigation for Admin/User sections |
+| **CreateUser.jsx** | Admin: Add new users with role and email |
+| **AssignTask.jsx** | Admin: Assign new tasks to users |
+| **AdminTaskOverview.jsx** | Admin: View all tasks assigned across users |
+| **UserList.jsx** | Admin: View all registered users and their task counts |
+| **UserDashboard.jsx** | User: Personalized dashboard with assigned tasks |
+| **UserTasks.jsx** | User: Interactive list to toggle task completion |
+| **LogoutButton.jsx** | Handles logout and redirects to login page |
 
-# Navigate to the folder
-cd employee-management-frontend
+---
 
-# Install dependencies
-npm install
+## 🏗️ Tech Stack
 
-# Start the development server
-npm run dev
-
-# Admin:
-  Email: admin@gmail.com
-  Password: admin123
-
-# User:
-  Email: created via Admin panel
-  Password: 123456
-
+| Technology | Purpose |
+|-------------|----------|
+| **React** | Component-based UI |
+| **Vite** | Lightning-fast bundler |
+| **Tailwind CSS** | Utility-first styling |
+| **Framer Motion** | Modern motion animations |
+| **LocalStorage API** | Data persistence |
+| **JavaScript (ES6+)** | Core logic and state management |
 
 ---
 
